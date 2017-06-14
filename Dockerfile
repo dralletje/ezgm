@@ -15,9 +15,9 @@ RUN until ./steamcmd.sh +login anonymous +force_install_dir /counterstrike +app_
 RUN until ./steamcmd.sh +login anonymous +force_install_dir /gmod +app_update 4020 validate +quit; do echo "Restarting.."; done
 
 # Libsteam32 fix
-RUN mkdir -p ~/.steam/sdk32/ \
- && cp /steam/linux32/steamclient.so ~/.steam/sdk32/ \
- && cp /gmod/bin/libsteam.so ~/.steam/sdk32/
+#RUN mkdir -p ~/.steam/sdk32/ \
+# && cp /steam/linux32/steamclient.so ~/.steam/sdk32/ \
+# && cp /gmod/bin/libsteam.so ~/.steam/sdk32/
 
 # Add required files
 ADD mount.cfg /gmod/garrysmod/cfg/mount.cfg
